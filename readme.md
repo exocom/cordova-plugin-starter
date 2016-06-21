@@ -1,4 +1,4 @@
-# PreSetup
+## PreSetup
 Some plugins require that your app name matches your real app.
 
 
@@ -8,7 +8,7 @@ config.xml
 <widget id="com.blank.test" ...
 ```
 
-## For reference
+### For reference
 Find the plugin you wish to work on and install it via cordova cli (Under WebStorm section)
 ```
 $ cordova plugin add {{plugin name}}
@@ -19,28 +19,28 @@ If applicable find the plaform you wish to work on IE not standard such as tabri
 $ cordova platform add {{dirctory containing platform files}}
 ```
 
-# WebStorm
-## Plugins (File->Settings->Plugins)
+## WebStorm
+### Plugins (File->Settings->Plugins)
 * PhoneGap/Cordova
 * Bash Support
 * Markdown Navigator
 
-## Run/Debug configurations
+### Run/Debug configurations
 In order for the cordova Run commands to work you will need to configure the path to the project. 
 You will also need to plugin your android device and select it from the Edit configuration Section
 
-### PhoneGap/Cordova Working directory (File->Run->Edit Configurations)
+#### PhoneGap/Cordova Working directory (File->Run->Edit Configurations)
 Replace $FILL_THIS_OUT$ to this directory IE the directory that you are reading this readme from :)
 In case your unsure about which directory to use, it is the one that contains (hooks/ plaforms/ plugins/ www/ config.xml)
 
-### Emulator and Phone (Run->Edit Configurations)
+#### Emulator and Phone (Run->Edit Configurations)
 Plugin you device
 Choose the matching profile IE PhoneGap/Cordova->Emulator (See RunDebug.png)
 Under Specify target click refresh and choose device.
 
 
-# Android Studio
-## Pre Setup Commands
+## Android Studio
+### Pre Setup Commands
 **Note many cli comands will remove the .idea folder from the $ProjectDir$/plaforms/android/.idea Just restore it from git.**
 
 Example
@@ -50,12 +50,12 @@ $ cordova platform add android
 ```
 
 
-## Open
+### Open
 * Restore the .idea folder (optional)
 * open the $ProjectRoot$/platforms/android in Android Studio by following these instructions:
 https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#opening-a-project-in-android-studio
 
-# Working Directory
+## Working Directory
 It is best to work on your plugin in the plugins folder then use the platform.sh command to apply changes to the cordova project.
 
 A dangerous but much quicker way is to work directly in the platforms/android for example in Android Studio then run cordova build.
@@ -63,7 +63,7 @@ All __WORK WILL BE LOST__  when __YOU__ forget to move all your changes back int
 
 
 
-# How this project was created (Assuming the above has been completed)
+## How this project was created (Assuming the above has been completed)
 
 Created cordova project
 ```
