@@ -1,0 +1,6 @@
+# These files are generated and should not be included.
+/platforms/
+
+# Some may want to remove the /plugins/ and commit it to git.
+# Also Git Submodules is always an option.
+/plugins/
