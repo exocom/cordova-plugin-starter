@@ -51,8 +51,9 @@ $ cordova platform add android
 
 
 ## Open
-* Restore the .idea folder 
-* open the $ProjectRoot$/platforms/android in Android Studio
+* Restore the .idea folder (optional)
+* open the $ProjectRoot$/platforms/android in Android Studio by following these instructions:
+https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#opening-a-project-in-android-studio
 
 # Working Directory
 It is best to work on your plugin in the plugins folder then use the platform.sh command to apply changes to the cordova project.
