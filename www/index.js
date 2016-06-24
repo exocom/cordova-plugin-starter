@@ -34,7 +34,7 @@ new tabris.Button({
     layoutData: {left: 0, right: 0, bottom: 0},
     background: "rgb(0, 113, 188)",
     textColor: "#fff",
-    text: "Button"
+    text: "Play"
 }).appendTo(page).on("select", function (button, selection) {
 
     var options = {
