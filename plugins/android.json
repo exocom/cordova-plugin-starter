@@ -9,6 +9,9 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.blank.test"
+        },
+        "veeplay-cordova-plugin": {
+            "PACKAGE_NAME": "com.blank.test"
         }
     },
     "dependent_plugins": {}

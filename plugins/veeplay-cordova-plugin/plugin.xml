@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='utf-8'?>
+  <plugin 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="veeplay-cordova-plugin" 
+    version="1.1.0">
+
+    <name>veeplay-cordova-plugin</name>
+    <js-module name="veeplay-cordova-plugin" src="www/veeplay-cordova-plugin.js">
+      <clobbers target="veeplay" />
+    </js-module>
+
+    <platform name="android">
+      <framework src="src/android/veeplay.gradle" custom="true" type="gradleReference" />
+
+      <config-file parent="/*" target="res/xml/config.xml">
+        <feature name="veeplay-cordova-plugin">
+          <param name="android-package" value="com.veeplay.cordova.VeeplayCordovaPlugin" />
+        </feature>
+      </config-file>
+
+      <config-file parent="/manifest/application" target="AndroidManifest.xml">
+        <activity android:name="com.appscend.utilities.WebBrowser" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"></activity>
+        <service android:name="com.veeplay.cast.VeeplayCastingService" android:exported="false" />
+      </config-file>
+    
+      <source-file src="src/android/VeeplayCordovaPlugin.java" target-dir="src/com/veeplay/cordova/" />
+      <source-file src="src/android/VeeplayCastConfigurationWrapper.java" target-dir="src/com/veeplay/cordova/" />
+    </platform>
+
+    <platform name="ios">
+      <config-file target="config.xml" parent="/*">
+        <feature name="veeplay-cordova-plugin">
+          <param name="ios-package" value="VeeplayPlugin" />
+        </feature>
+      </config-file>
+
+      <header-file src="src/ios/VeeplayPlugin.h" />
+      <source-file src="src/ios/VeeplayPlugin.m" />
+
+      <header-file src="src/ios/library/Headers/APSAVPlayer.h" />
+      <header-file src="src/ios/library/Headers/APSAVPlayerView.h" />
+      <header-file src="src/ios/library/Headers/APSAVPlayerViewController.h" />
+      <header-file src="src/ios/library/Headers/APSControlPluginProtocol.h" />
+      <header-file src="src/ios/library/Headers/APSMediaBuilder.h" />
+      <header-file src="src/ios/library/Headers/APSMediaBuilderPlugin.h" />
+      <header-file src="src/ios/library/Headers/APSMediaEvent.h" />
+      <header-file src="src/ios/library/Headers/APSMediaOverlay.h" />
+      <header-file src="src/ios/library/Headers/APSMediaPlayer.h" />
+      <header-file src="src/ios/library/Headers/APSMediaPlayerButtonOverlayController.h" />
+      <header-file src="src/ios/library/Headers/APSMediaPlayerClosableOverlayController.h" />
+      <header-file src="src/ios/library/Headers/APSMediaPlayerControlsOverlayController.h" />
+      <header-file src="src/ios/library/Headers/APSMediaPlayerHTMLOverlayController.h" />
+      <header-file src="src/ios/library/Headers/APSMediaPlayerImageOverlayController.h" />
+      <header-file src="src/ios/library/Headers/APSMediaPlayerOverlayController.h" />
+      <header-file src="src/ios/library/Headers/APSMediaPlayerProtocol.h" />
+      <header-file src="src/ios/library/Headers/APSMediaPlayerTextOverlayController.h" />
+      <header-file src="src/ios/library/Headers/APSMediaPlayerVimeoOverlayController.h" />
+      <header-file src="src/ios/library/Headers/APSMediaPlayerYoutubeOverlayController.h" />
+      <header-file src="src/ios/library/Headers/APSMediaTrackableObject.h" />
+      <header-file src="src/ios/library/Headers/APSMediaUnit.h" />
+      <header-file src="src/ios/library/Headers/APSMPMoviePlayer.h" />
+      <header-file src="src/ios/library/Headers/APSTimedMetadata.h" />
+      <header-file src="src/ios/library/Headers/APSTypes.h" />
+      <header-file src="src/ios/library/Headers/APSUnitManagerProtocol.h" />
+      <header-file src="src/ios/library/Headers/APSVASTAdBreak.h" />
+      <header-file src="src/ios/library/Headers/APSVASTBannerConfiguration.h" />
+      <header-file src="src/ios/library/Headers/APSVASTCountdownConfiguration.h" />
+      <header-file src="src/ios/library/Headers/APSVASTFullscreenButtonConfiguration.h" />
+      <header-file src="src/ios/library/Headers/APSVASTFullscreenOverlayController.h" />
+      <header-file src="src/ios/library/Headers/APSVASTMediaBuilderPlugin.h" />
+      <header-file src="src/ios/library/Headers/APSVASTSkipButtonConfiguration.h" />
+      <header-file src="src/ios/library/Headers/APSVASTSkipOverlayController.h" />
+      <header-file src="src/ios/library/Headers/AVPlayer+View.h" />
+      <header-file src="src/ios/library/Headers/KRAdapter.h" />
+      <header-file src="src/ios/library/Headers/KRHub.h" />
+      <header-file src="src/ios/library/Headers/TSMiniWebBrowser.h" />
+
+      <resource-file src="src/ios/library/Assets/back_icon.png" />
+      <resource-file src="src/ios/library/Assets/back_icon@2x.png" />
+      <resource-file src="src/ios/library/Assets/forward_icon.png" />
+      <resource-file src="src/ios/library/Assets/forward_icon@2x.png" />
+      <resource-file src="src/ios/library/Assets/MRAID.bundle" />
+      <resource-file src="src/ios/library/Assets/APSMediaPlayer.bundle" />
+      <resource-file src="src/ios/library/Assets/reload_icon.png" />
+      <resource-file src="src/ios/library/Assets/reload_icon@2x.png" />
+      <resource-file src="src/ios/library/Assets/TSMiniWebBrowser.nib" />
+
+      <source-file src="src/ios/library/libVeeplay.a" framework="true" />
+
+      <framework src="MediaPlayer.framework" />
+      <framework src="AVFoundation.framework" />
+      <framework src="CoreMedia.framework" />
+      <framework src="SystemConfiguration.framework" />
+      <framework src="libz.dylib" />
+    </platform>
+  </plugin>
